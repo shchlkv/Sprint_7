@@ -1,11 +1,11 @@
-package POJO;
+package pojo;
 
 public class CreateCourier {
 
 
-    String login = "Courier_*1";
-    String password = "12345";
-    String firstName = "Gonzo";
+    String login;
+    String password;
+    String firstName;
     public void setLogin(String login) {
         this.login = login;
     }

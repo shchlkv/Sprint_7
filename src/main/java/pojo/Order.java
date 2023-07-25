@@ -1,4 +1,4 @@
-package POJO;
+package pojo;
 
 public class Order {
     private String firstName;
@@ -11,15 +11,15 @@ public class Order {
     private String comment;
     private String[] color;
 
-    public Order(String[] color) {
-        this.firstName = "AAAA";
-        this.lastName = "jjjjj";
-        this.address = "jjjjj";
-        this.metroStation = "jjjjj";
-        this.phone = "9773331155";
-        this.rentTime = 1;
-        this.deliveryDate = "2023-07-06T00:00:00.000Z";
-        this.comment = "comment";
+    public Order(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, String[] color) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.metroStation = metroStation;
+        this.phone = phone;
+        this.rentTime = rentTime;
+        this.deliveryDate = deliveryDate;
+        this.comment = comment;
         this.color = color;
     }
 

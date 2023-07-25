@@ -1,9 +1,8 @@
-import POJO.CreateCourier;
+import pojo.CreateCourier;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -22,7 +21,7 @@ public class CreateCourierTest {
     @Before
     public void setUp() {
 
-        RestAssured.baseURI = "http://qa-scooter.praktikum-services.ru";
+        RestAssured.baseURI = Uri.URI;
 
     }
 
@@ -44,11 +43,11 @@ public class CreateCourierTest {
     @Description("Тест: попытка создать курьера с таким же логином")
     public void createSameCourierTest() {
         newCourier = new CreateCourier(loginCourier, password, firstName);
-        Response response1 = Steps.createCourier(newCourier);
-        response1.then().assertThat().statusCode(equalTo(201));
+        Response response = Steps.createCourier(newCourier);
+        response.then().assertThat().statusCode(equalTo(201));
         newCourier = new CreateCourier(loginCourier, password, firstName);
-        Response response2 = Steps.createCourier(newCourier);
-        response2.then().assertThat().statusCode(equalTo(409));
+        Response responseThatCourierIsNotCreate = Steps.createCourier(newCourier);
+        responseThatCourierIsNotCreate.then().assertThat().statusCode(equalTo(409));
         Steps.deleteCourier(loginCourier, password);
     }
 

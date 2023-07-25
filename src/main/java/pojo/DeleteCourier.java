@@ -1,8 +1,8 @@
-package POJO;
+package pojo;
 
 public class DeleteCourier {
 
-    String id;
+    private String id;
 
     public DeleteCourier(String id) {
         this.id = id;
