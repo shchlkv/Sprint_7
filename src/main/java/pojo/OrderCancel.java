@@ -1,7 +1,7 @@
 package pojo;
 
 public class OrderCancel {
-    String track;
+    private String track;
 
     public OrderCancel(String track) {
         this.track = track;

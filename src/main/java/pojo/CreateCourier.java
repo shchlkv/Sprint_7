@@ -3,9 +3,9 @@ package pojo;
 public class CreateCourier {
 
 
-    String login;
-    String password;
-    String firstName;
+    private String login;
+    private String password;
+    private String firstName;
     public void setLogin(String login) {
         this.login = login;
     }

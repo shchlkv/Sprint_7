@@ -49,7 +49,6 @@ public class CreateOrderTest {
         Response response = Steps.newOrder(order);
         response.then()
                 .assertThat().statusCode(equalTo(201)).body("track", notNullValue());
-        System.out.println(response.body().asString());//посмотреть номер заказа
 
 
     }
